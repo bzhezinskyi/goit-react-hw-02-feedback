@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
-export const Title = styled.h2``;
-export const StatisticsList = styled.ul``;
-export const StatisticsItem = styled.li``;
+export const StatisticsList = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style: none;
+`;

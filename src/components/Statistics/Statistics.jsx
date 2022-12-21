@@ -1,20 +1,21 @@
-import { Component } from 'react';
-// import PropTypes from 'prop-types';
+import { StatisticsList } from './Statistics.styled';
 
-import { StatisticsList, StatisticsItem, Title } from './Statistics.styled';
-
-export class Statistics extends Component {
-  render() {
-    const { good, neutral, bad } = this.props;
-    return (
-      <>
-        <Title>Statistics</Title>
-        <StatisticsList>
-          <StatisticsItem>{'Good: ' + good}</StatisticsItem>
-          <StatisticsItem>{'Neutral: ' + neutral}</StatisticsItem>
-          <StatisticsItem>{'Bad: ' + bad}</StatisticsItem>
-        </StatisticsList>
-      </>
-    );
-  }
-}
+export const Statistics = ({
+  good,
+  neutral,
+  bad,
+  total,
+  positivePercentage,
+}) => {
+  return (
+    <>
+      <StatisticsList>
+        <li>{'Good: ' + good}</li>
+        <li>{'Neutral: ' + neutral}</li>
+        <li>{'Bad: ' + bad}</li>
+        <li>{'Total: ' + total}</li>
+        <li>{'Positive feedback: ' + positivePercentage + '%'}</li>
+      </StatisticsList>
+    </>
+  );
+};
