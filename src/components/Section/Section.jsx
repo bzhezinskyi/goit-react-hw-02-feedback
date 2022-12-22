@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { StatisticsBox } from './Section.styled';
 
 export const Section = ({ title, children }) => {
@@ -7,4 +9,8 @@ export const Section = ({ title, children }) => {
       {children}
     </StatisticsBox>
   );
+};
+
+Section.propTypes = {
+  title: PropTypes.string.isRequired,
 };
