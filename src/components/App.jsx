@@ -13,18 +13,9 @@ export class App extends Component {
   };
 
   hendleClick = message => {
-    message === 'Good' &&
-      this.setState(prevState => {
-        return { good: prevState.good + 1 };
-      });
-    message === 'Neutral' &&
-      this.setState(prevState => {
-        return { neutral: prevState.neutral + 1 };
-      });
-    message === 'Bad' &&
-      this.setState(prevState => {
-        return { bad: prevState.bad + 1 };
-      });
+    this.setState(prevState => {
+      return { [message]: prevState[message] + 1 };
+    });
   };
 
   countTotalFeedback() {
@@ -41,7 +32,10 @@ export class App extends Component {
     return (
       <>
         <Section title="Please leave feedback">
-          <FeedbackOptions onLeaveFeedback={this.hendleClick} />
+          <FeedbackOptions
+            options={['good', 'neutral', 'bad']}
+            onLeaveFeedback={this.hendleClick}
+          />
         </Section>
         <Section title="Statistics">
           {good + neutral + bad === 0 ? (
